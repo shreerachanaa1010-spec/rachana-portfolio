@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachana Shree H S — AI/ML Engineer</title>
+  <meta name="description" content="AI/ML Engineer building agentic and RAG systems on Azure for healthcare. Portfolio of Rachana Shree H S.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a192f', navyl: '#112240', navyll: '#233554',
+            teal: '#64ffda', sl: '#8892b0', sll: '#a8b2d1', slll: '#ccd6f6'
+          },
+          fontFamily: {
+            sans: ['Manrope', 'system-ui', 'sans-serif'],
+            mono: ['"Fira Code"', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0a192f; color: #8892b0; }
+    ::selection { background: #233554; color: #ccd6f6; }
+    .bullet li { position: relative; padding-left: 22px; }
+    .bullet li::before { content: "▹"; position: absolute; left: 0; color: #64ffda; }
+    .sec-title { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
+    .sec-title::after { content: ""; height: 1px; background: #233554; flex: 1; max-width: 300px; }
+    .tab-btn { border-left: 2px solid #233554; transition: all .2s; }
+    .tab-btn[aria-selected="true"] { border-left-color: #64ffda; color: #64ffda; background: #112240; }
+    .tab-btn:hover { background: #112240; color: #64ffda; }
+    @media (max-width: 767px) {
+      .tab-list { flex-direction: row; overflow-x: auto; }
+      .tab-btn { border-left: 0; border-bottom: 2px solid #233554; white-space: nowrap; }
+      .tab-btn[aria-selected="true"] { border-bottom-color: #64ffda; }
+    }
+    .avatar::after { content: ""; position: absolute; inset: 0; border: 2px solid #64ffda; border-radius: 6px; transform: translate(18px, 18px); z-index: -1; transition: transform .25s; }
+    .avatar:hover::after { transform: translate(12px, 12px); }
+    .term { background: #020c1b; }
+    .term-line { animation: fadein .2s ease-out; }
+    @keyframes fadein { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+    .vertical { writing-mode: vertical-rl; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #64ffda; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { .term-line { animation: none; } .avatar::after { transition: none; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body class="font-sans antialiased leading-relaxed">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 h-20 bg-navy/90 backdrop-blur border-b border-navyll/50">
+    <nav class="max-w-6xl mx-auto h-full px-6 md:px-10 flex items-center justify-between" aria-label="Main">
+      <a href="#home" class="w-11 h-11 grid place-items-center border-2 border-teal text-teal font-mono font-medium rounded-sm hover:bg-teal/10" aria-label="Home">RS</a>
+      <ul class="hidden lg:flex items-center gap-7 font-mono text-[13px]">
+        <li><a class="text-slll hover:text-teal" href="#about"><span class="text-teal">01.</span> About</a></li>
+        <li><a class="text-slll hover:text-teal" href="#experience"><span class="text-teal">02.</span> Experience</a></li>
+        <li><a class="text-slll hover:text-teal" href="#projects"><span class="text-teal">03.</span> Projects</a></li>
+        <li><a class="text-slll hover:text-teal" href="#playground"><span class="text-teal">04.</span> Playground</a></li>
+        <li><a class="text-slll hover:text-teal" href="#skills"><span class="text-teal">05.</span> Skills</a></li>
+        <li><a class="text-slll hover:text-teal" href="#contact"><span class="text-teal">06.</span> Contact</a></li>
+        <li><a href="resume.pdf" target="_blank" rel="noopener" class="border border-teal text-teal px-4 py-2 rounded-sm hover:bg-teal/10">Resume</a></li>
+      </ul>
+      <button id="menuBtn" class="lg:hidden text-teal font-mono text-sm border border-teal px-3 py-2 rounded-sm" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </nav>
+    <div id="mobileMenu" class="hidden lg:hidden bg-navyl border-b border-navyll">
+      <ul class="px-6 py-4 grid gap-3 font-mono text-sm">
+        <li><a class="text-slll" href="#about">About</a></li>
+        <li><a class="text-slll" href="#experience">Experience</a></li>
+        <li><a class="text-slll" href="#projects">Projects</a></li>
+        <li><a class="text-slll" href="#playground">Playground</a></li>
+        <li><a class="text-slll" href="#skills">Skills</a></li>
+        <li><a class="text-slll" href="#contact">Contact</a></li>
+        <li><a class="text-teal" href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- SIDE RAILS (desktop) -->
+  <div class="hidden lg:flex fixed left-8 bottom-0 flex-col items-center gap-5 z-40" aria-label="Social links">
+    <a data-link="github" hidden target="_blank" rel="noopener" class="font-mono text-xs text-sll hover:text-teal vertical">GitHub</a>
+    <a data-link="linkedin" hidden target="_blank" rel="noopener" class="font-mono text-xs text-sll hover:text-teal vertical">LinkedIn</a>
+    <a data-link="neetcode" hidden target="_blank" rel="noopener" class="font-mono text-xs text-sll hover:text-teal vertical">Neetcode</a>
+    <span class="w-px h-24 bg-sll"></span>
+  </div>
+  <div class="hidden lg:flex fixed right-8 bottom-0 flex-col items-center gap-5 z-40">
+    <a href="mailto:shreerachanaa1010@gmail.com" class="font-mono text-xs text-sll hover:text-teal vertical tracking-widest">shreerachanaa1010@gmail.com</a>
+    <span class="w-px h-24 bg-sll"></span>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-6 md:px-10">
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen flex flex-col justify-center pt-28 pb-16">
+      <p class="font-mono text-teal text-base mb-5">Hi, my name is</p>
+      <h1 class="text-5xl sm:text-7xl font-extrabold text-slll tracking-tight">Rachana Shree H S.</h1>
+      <h2 class="text-4xl sm:text-6xl font-extrabold text-sl tracking-tight mt-2">I build agentic AI systems.</h2>
+      <p class="max-w-xl mt-7 text-lg">I'm an <span class="text-teal">AI/ML Engineer</span> shipping production agentic and RAG systems on Azure for healthcare, and I measure model quality before anything goes out the door.</p>
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href="#projects" class="font-mono text-sm border border-teal text-teal px-7 py-4 rounded-sm hover:bg-teal/10">View Projects</a>
+        <a href="#contact" class="font-mono text-sm text-slll border border-navyll px-7 py-4 rounded-sm hover:border-teal hover:text-teal">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 reveal">
+      <h2 class="sec-title text-2xl sm:text-3xl font-bold text-slll mb-10"><span class="font-mono text-teal text-xl font-normal">01.</span> About Me</h2>
+      <div class="grid md:grid-cols-5 gap-12">
+        <div class="md:col-span-3 space-y-4">
+          <p>Hello! I'm Rachana, an AI/ML Engineer with <span class="text-teal">2.3 years</span> of experience building production Agentic AI, RAG and LLM-based systems. I have a strong background in hybrid retrieval, model evaluation, FastAPI, ASP.NET Core and Azure, and I measure model quality before shipping.</p>
+          <p>At <span class="text-teal">Gainwell Technologies</span> I build LangGraph workflows on Azure for healthcare guideline analysis, relationship-aware retrieval, human-in-the-loop approvals and claim fraud detection. Alongside that I build projects in hybrid retrieval, LLM fine-tuning, verified code generation and agri-advisory, including <span class="text-teal">Kisaan Sampurna</span>, now at 50,000+ installs on Google Play.</p>
+          <p>My project work has received <span class="text-teal">KSCST Karnataka state funding</span> and a <span class="text-teal">2nd place</span> at the IISc Bangalore Research &amp; Innovation Program.</p>
+          <p class="pt-2">Technologies I've worked with recently:</p>
+          <ul class="bullet grid grid-cols-2 gap-y-2 font-mono text-[13px] max-w-md">
+            <li>LangGraph</li><li>LangChain</li><li>CrewAI</li><li>Azure OpenAI</li>
+            <li>Claude</li><li>FastAPI</li><li>ASP.NET Core</li><li>PyTorch</li>
+            <li>QLoRA</li><li>MLflow</li><li>Azure ML</li><li>React</li>
+          </ul>
+        </div>
+        <div class="md:col-span-2 flex justify-center md:justify-start">
+          <div class="avatar relative w-60 h-60 sm:w-64 sm:h-64 z-0">
+            <div class="absolute inset-0 rounded-md bg-navyl grid place-items-center text-6xl font-extrabold text-teal">RS</div>
+            <img src="photo.jpg" alt="Rachana Shree H S" class="absolute inset-0 w-full h-full object-cover rounded-md" onerror="this.remove()">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-24 reveal">
+      <h2 class="sec-title text-2xl sm:text-3xl font-bold text-slll mb-10"><span class="font-mono text-teal text-xl font-normal">02.</span> Where I've Worked</h2>
+      <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+        <div class="tab-list flex md:flex-col md:w-48 shrink-0 font-mono text-[13px]" role="tablist" aria-label="Employers">
+          <button class="tab-btn text-left px-5 py-3" role="tab" aria-selected="true" aria-controls="tab-gainwell" id="t-gainwell">Gainwell</button>
+          <button class="tab-btn text-left px-5 py-3" role="tab" aria-selected="false" aria-controls="tab-furnishka" id="t-furnishka">Furnishka</button>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div id="tab-gainwell" role="tabpanel" aria-labelledby="t-gainwell">
+            <h3 class="text-xl font-semibold text-slll">Associate AI/ML Engineer <span class="text-teal">@ Gainwell Technologies</span></h3>
+            <p class="font-mono text-[13px] mt-1 mb-5">Jan 2025 – Present · Bengaluru</p>
+            <ul class="bullet space-y-3">
+              <li>Built agentic workflows (LangChain, LangGraph, FastAPI, Azure OpenAI, Claude) for healthcare guideline analysis and grounded response generation, serving <span class="text-slll">40+ users</span> and <span class="text-slll">500+ requests/week</span>.</li>
+              <li>Implemented RAG over Azure AI Search and Cosmos DB Gremlin for relationship-aware retrieval. Added PostgreSQL-backed LangGraph checkpointing for fault recovery and human-in-the-loop approvals.</li>
+              <li>Automated RFP response with a CrewAI and Azure Document Intelligence pipeline for requirement extraction and draft generation, cutting first-draft time from <span class="text-slll">8 to 2 hours</span>.</li>
+              <li>Built a claim fraud detection pipeline (Azure ML, MLflow, Scikit-Learn) with tracked experiments and ONNX serving for real-time and batch inference. It reached <span class="text-slll">0.93 AUC and 82% precision at 70% recall</span> on 250K claims.</li>
+              <li>Developed LLM-powered engineering analytics on Azure DevOps APIs and Bronze/Silver/Gold claims-reconciliation workflows, reducing manual reconciliation effort by <span class="text-slll">40%</span>.</li>
+            </ul>
+          </div>
+          <div id="tab-furnishka" role="tabpanel" aria-labelledby="t-furnishka" hidden>
+            <h3 class="text-xl font-semibold text-slll">Software Engineering Intern <span class="text-teal">@ Furnishka</span></h3>
+            <p class="font-mono text-[13px] mt-1 mb-5">Sep 2024 – Jan 2025</p>
+            <ul class="bullet space-y-3">
+              <li>Built and optimized React features for an e-commerce platform, improving page load time by <span class="text-slll">30%</span>, and worked directly with the founder on requirements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 reveal">
+      <h2 class="sec-title text-2xl sm:text-3xl font-bold text-slll mb-12"><span class="font-mono text-teal text-xl font-normal">03.</span> Things I've Built</h2>
+      <div class="grid gap-10">
+
+        <article class="bg-navyl rounded-md p-7 sm:p-9 shadow-xl shadow-black/20 hover:-translate-y-1 transition-transform">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <p class="font-mono text-teal text-[13px]">Featured Project</p>
+            <span class="flex gap-4 font-mono text-[13px]"><a data-link="sentinelGithub" hidden target="_blank" rel="noopener" class="hover:text-teal text-sll">GitHub ↗</a><a data-link="sentinelLive" hidden target="_blank" rel="noopener" class="hover:text-teal text-sll">Live ↗</a></span>
+          </div>
+          <h3 class="text-2xl font-bold text-slll mt-1">Sentinel</h3>
+          <p class="font-mono text-[13px] mb-4">Agentic Financial Research &amp; Regulatory Compliance Engine</p>
+          <p>Fine-tuned Qwen-2.5-7B Instruct with 4-bit QLoRA on 2,174 domain examples. On 271 held-out test claims it reached <span class="text-slll">0.996 Macro F1 and 99.6% accuracy</span> (95% CI 98.0–99.9%), a +39.5% relative lift over GPT-4o-mini. Observability, evaluation and QLoRA pipelines with Langfuse improve retrieval quality, financial reasoning and the reliability of AI-generated research reports.</p>
+            <ul class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4">
+            <li><span class="block text-2xl font-bold text-teal">0.996</span><span class="font-mono text-[11px] uppercase tracking-wide">Macro F1</span></li>
+            <li><span class="block text-2xl font-bold text-teal">+39.5%</span><span class="font-mono text-[11px] uppercase tracking-wide">vs GPT-4o-mini</span></li>
+            <li><span class="block text-2xl font-bold text-teal">9x</span><span class="font-mono text-[11px] uppercase tracking-wide">cost cut · $1 vs $9 / 1k</span></li>
+            <li><span class="block text-2xl font-bold text-teal">612 ms</span><span class="font-mono text-[11px] uppercase tracking-wide">p50 latency</span></li>
+            </ul>
+          <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[12px] text-sll"><li>LangGraph</li><li>QLoRA</li><li>Qwen 2.5</li><li>BAAI/bge-reranker-base</li><li>RAGAS</li><li>FAISS</li><li>PostgreSQL</li><li>FastAPI</li><li>Langfuse</li><li>Docker</li><li>AWS</li></ul>
+        </article>
+
+        <article class="bg-navyl rounded-md p-7 sm:p-9 shadow-xl shadow-black/20 hover:-translate-y-1 transition-transform">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <p class="font-mono text-teal text-[13px]">Featured Project</p>
+            <span class="flex gap-4 font-mono text-[13px]"><a data-link="modernizationGithub" hidden target="_blank" rel="noopener" class="hover:text-teal text-sll">GitHub ↗</a><a data-link="modernizationLive" hidden target="_blank" rel="noopener" class="hover:text-teal text-sll">Live ↗</a></span>
+          </div>
+          <h3 class="text-2xl font-bold text-slll mt-1">Legacy Modernization Copilot</h3>
+          <p class="font-mono text-[13px] mb-4">AI-Powered .NET Refactoring</p>
+          <p>A .NET modernization copilot built on Roslyn, hybrid RAG and Gemini. It automates identification of <span class="text-slll">18+ legacy code anti-patterns</span> across repository-scale codebases. Repository-aware hybrid RAG improved retrieval quality by 32% over semantic search, and AI-generated refactors passed verification 78% of the time across 40 legacy .NET files.</p>
+            <ul class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4">
+            <li><span class="block text-2xl font-bold text-teal">18+</span><span class="font-mono text-[11px] uppercase tracking-wide">anti-patterns found</span></li>
+            <li><span class="block text-2xl font-bold text-teal">+32%</span><span class="font-mono text-[11px] uppercase tracking-wide">retrieval vs semantic</span></li>
+            <li><span class="block text-2xl font-bold text-teal">78%</span><span class="font-mono text-[11px] uppercase tracking-wide">refactors verified</span></li>
+            <li><span class="block text-2xl font-bold text-teal">40</span><span class="font-mono text-[11px] uppercase tracking-wide">legacy .NET files</span></li>
+            </ul>
+          <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[12px] text-sll"><li>C#</li><li>Python</li><li>Roslyn</li><li>Gemini</li><li>Hybrid RAG</li><li>React</li><li>SQLite</li><li>Render</li><li>GitHub Actions</li></ul>
+        </article>
+
+        <article class="bg-navyl rounded-md p-7 sm:p-9 shadow-xl shadow-black/20 hover:-translate-y-1 transition-transform">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <p class="font-mono text-teal text-[13px]">Featured Project</p>
+            <span class="flex gap-4 font-mono text-[13px]"><a data-link="kisaanPlay" hidden target="_blank" rel="noopener" class="hover:text-teal text-sll">Google Play ↗</a></span>
+          </div>
+          <h3 class="text-2xl font-bold text-slll mt-1">Kisaan Sampurna</h3>
+          <p class="font-mono text-[13px] mb-4">Multimodal Agri-Advisory &amp; Market Intelligence</p>
+          <p>A multimodal agri-advisory platform built with LangGraph, Neo4j and FastAPI, integrating a <span class="text-slll">3,140-node crop-disease knowledge graph</span> and a market intelligence engine. Qwen-2.5 was fine-tuned on 178K+ training pairs, and ensemble forecasting models cover 6,273 mandis with 9.19% validation MAPE.</p>
+            <ul class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4">
+            <li><span class="block text-2xl font-bold text-teal">50,000+</span><span class="font-mono text-[11px] uppercase tracking-wide">installs</span></li>
+            <li><span class="block text-2xl font-bold text-teal">3,500+</span><span class="font-mono text-[11px] uppercase tracking-wide">subscribers</span></li>
+            <li><span class="block text-2xl font-bold text-teal">6,273</span><span class="font-mono text-[11px] uppercase tracking-wide">mandis forecast</span></li>
+            <li><span class="block text-2xl font-bold text-teal">9.19%</span><span class="font-mono text-[11px] uppercase tracking-wide">validation MAPE</span></li>
+            </ul>
+          <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-1 font-mono text-[12px] text-sll"><li>Gemini 2.5</li><li>Qwen-2.5</li><li>LangGraph</li><li>QLoRA</li><li>Neo4j</li><li>GraphQL</li><li>FastAPI</li><li>XGBoost</li><li>PostgreSQL</li><li>AWS</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLAYGROUND -->
+    <section id="playground" class="py-24 reveal">
+      <h2 class="sec-title text-2xl sm:text-3xl font-bold text-slll mb-4"><span class="font-mono text-teal text-xl font-normal">04.</span> AI Playground</h2>
+      <p class="mb-8 max-w-2xl">Pick a project and run it. This is a simulated run that streams illustrative pipeline steps for each project. It is not live model output.</p>
+
+      <div class="term rounded-md border border-navyll overflow-hidden shadow-xl shadow-black/30">
+        <div class="flex flex-wrap items-center justify-between gap-3 bg-navyl px-4 py-3 border-b border-navyll">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span><span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span><span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+            <span class="ml-3 font-mono text-xs text-sll">rachana@playground ~ zsh</span>
+          </div>
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Projects" id="pgTabs"></div>
+        </div>
+        <div class="px-4 pt-4 font-mono text-[12.5px] text-sll" id="pgMeta"></div>
+        <div id="pgLog" class="px-4 py-4 h-72 overflow-y-auto font-mono text-[12.5px] leading-6" role="log" aria-live="polite"></div>
+        <div class="flex flex-wrap gap-3 px-4 py-3 bg-navyl border-t border-navyll">
+          <button id="pgRun" class="font-mono text-xs bg-teal text-navy font-medium px-4 py-2 rounded-sm hover:opacity-90">Run</button>
+          <button id="pgClear" class="font-mono text-xs border border-navyll text-slll px-4 py-2 rounded-sm hover:border-teal hover:text-teal">Clear</button>
+          <button id="pgCopy" class="font-mono text-xs border border-navyll text-slll px-4 py-2 rounded-sm hover:border-teal hover:text-teal">Copy log</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 reveal">
+      <h2 class="sec-title text-2xl sm:text-3xl font-bold text-slll mb-10"><span class="font-mono text-teal text-xl font-normal">05.</span> Technical Skills</h2>
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">GenAI / LLMs</h3><p class="text-sll">Agentic AI, RAG, Hybrid Retrieval, Reranking, Prompt Engineering, QLoRA Fine-Tuning, Model Evaluation, Responsible AI, Azure OpenAI, Gemini, Claude, Qwen</p></div>
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">AI Frameworks</h3><p class="text-sll">LangChain, LangGraph, CrewAI, FAISS, BM25, PyTorch, Scikit-Learn, TensorFlow</p></div>
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">MLOps</h3><p class="text-sll">Azure ML, MLflow, ONNX, Experiment Tracking, Model Registry, Model Serving, Langfuse</p></div>
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">Data &amp; Search</h3><p class="text-sll">Azure AI Search, PostgreSQL, Cosmos DB (Gremlin), Neo4j, SQLite, Redis, GraphQL, Pandas</p></div>
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">Backend &amp; Cloud</h3><p class="text-sll">Python, C#, SQL, FastAPI, ASP.NET Core, Microservices, Docker, Kubernetes, AWS, Azure, GitHub Actions</p></div>
+        <div><h3 class="font-mono text-teal text-[13px] mb-2">Frontend</h3><p class="text-sll">React, TypeScript, JavaScript, Vite</p></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-16">
+        <div>
+          <h3 class="font-mono text-teal text-[13px] mb-3">Education</h3>
+          <p class="text-slll font-semibold">B.E., M. S. Ramaiah Institute of Technology</p>
+          <p class="font-mono text-[13px]">CGPA 9.32 / 10 · 2021 – 2025</p>
+        </div>
+        <div>
+          <h3 class="font-mono text-teal text-[13px] mb-3">Certifications</h3>
+          <ul class="bullet space-y-2">
+            <li><span class="text-slll">Building with the Claude API</span> · Anthropic Academy</li>
+            <li><span class="text-slll">Generative AI Fundamentals</span> · Databricks, Oct 2026</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 text-center max-w-xl mx-auto reveal">
+      <p class="font-mono text-teal text-base mb-3">06. What's Next?</p>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-slll mb-5">Get In Touch</h2>
+      <p>For roles, collaborations, or questions about any of this work, my inbox is open.</p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="mailto:shreerachanaa1010@gmail.com" class="font-mono text-sm border border-teal text-teal px-7 py-4 rounded-sm hover:bg-teal/10">Say Hello</a>
+        <button id="copyMail" class="font-mono text-sm border border-navyll text-slll px-7 py-4 rounded-sm hover:border-teal hover:text-teal">Copy email</button>
+      </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-2 font-mono text-[13px]">
+        <a data-link="linkedin" hidden target="_blank" rel="noopener" class="text-sll hover:text-teal">LinkedIn ↗</a>
+        <a data-link="github" hidden target="_blank" rel="noopener" class="text-sll hover:text-teal">GitHub ↗</a>
+        <a data-link="neetcode" hidden target="_blank" rel="noopener" class="text-sll hover:text-teal">NeetCode ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center font-mono text-[12px] py-8 text-sll">
+    <p>Designed &amp; built by Rachana Shree H S</p>
+    <p class="mt-1">Built with Tailwind CSS &amp; ScrollReveal · © 2026</p>
+  </footer>
+
+<script>
+  // ---- Fill in your profile URLs. Links with an empty value stay hidden. ----
+  const LINKS = {
+    github: "",
+    linkedin: "",
+    neetcode: "",
+    sentinelGithub: "",
+    sentinelLive: "",
+    modernizationGithub: "",
+    modernizationLive: "",
+    kisaanPlay: ""
+  };
+  document.querySelectorAll("[data-link]").forEach(a => {
+    const u = LINKS[a.dataset.link];
+    if (u) { a.href = u; a.hidden = false; }
+  });
+
+  // ---- Mobile menu ----
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  menuBtn.addEventListener("click", () => {
+    const open = mobileMenu.classList.toggle("hidden") === false;
+    menuBtn.setAttribute("aria-expanded", String(open));
+  });
+  mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    menuBtn.setAttribute("aria-expanded", "false");
+  }));
+
+  // ---- Experience tabs ----
+  const tabs = document.querySelectorAll(".tab-btn");
+  tabs.forEach(btn => btn.addEventListener("click", () => {
+    tabs.forEach(b => {
+      const on = b === btn;
+      b.setAttribute("aria-selected", String(on));
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+    });
+  }));
+
+  // ---- Copy email ----
+  document.getElementById("copyMail").addEventListener("click", e => {
+    const btn = e.currentTarget;
+    const done = t => { btn.textContent = t; setTimeout(() => btn.textContent = "Copy email", 2000); };
+    navigator.clipboard.writeText("shreerachanaa1010@gmail.com").then(() => done("Copied"), () => done("Press Ctrl+C on the address above"));
+  });
+
+  // ---- Playground (simulated runs, illustrative steps only) ----
+  const PROJECTS = {
+    sentinel: {
+      name: "Sentinel",
+      endpoint: "POST /research",
+      input: '{ "question": "Summarise the recent filings for an NSE-listed company" }',
+      steps: [
+        ["system", "Run started. Supervisor agent routing the question."],
+        ["plan", "Planner splits the question into retrieval and analysis tasks."],
+        ["retrieve", "Hybrid retrieval over indexed filings and reports."],
+        ["rerank", "Reranking candidate passages."],
+        ["tools", "MCP function call: fetch structured company data."],
+        ["generate", "Drafting analysis with structured output."],
+        ["cite", "Attaching source citations to each claim."],
+        ["trace", "Spans and evaluation scores recorded in Langfuse."],
+        ["done", "Citation-backed research note returned."]
+      ]
+    },
+    modernization: {
+      name: "Legacy Modernization Copilot",
+      endpoint: "POST /refactor",
+      input: '{ "file": "LegacyOrderService.cs" }',
+      steps: [
+        ["system", "Run started. Loading the .NET file and repository index."],
+        ["roslyn", "Roslyn static analysis found modernization candidates."],
+        ["rules", "Checking the 18 deterministic modernization rules."],
+        ["rag", "Retrieving repository-aware context for the change."],
+        ["gemini", "Gemini proposes a refactor using that context."],
+        ["tests", "Generating tests for the changed code."],
+        ["verify", "Running the generated tests against the AI change."],
+        ["gate", "Verification gate decides: accept or reject the change."],
+        ["done", "Result returned for review."]
+      ]
+    },
+    kisaan: {
+      name: "Kisaan Sampurna",
+      endpoint: "POST /advise",
+      input: '{ "crop": "tomato", "question": "Leaves are spotting, what should I do?", "language": "kn" }',
+      steps: [
+        ["system", "Run started. Reading the question and crop details."],
+        ["graph", "Looking up matching diseases in the Neo4j knowledge graph."],
+        ["agent", "LangGraph agent chooses tools: disease lookup, market data."],
+        ["market", "Market intelligence engine fetches the mandi price outlook."],
+        ["generate", "Qwen-2.5 drafts the advisory in the farmer's language."],
+        ["done", "Advisory returned."]
+      ]
+    }
+  };
+  const COLORS = { system: "#8892b0", done: "#64ffda", gate: "#64ffda", verify: "#64ffda" };
+
+  const tabsEl = document.getElementById("pgTabs");
+  const logEl = document.getElementById("pgLog");
+  const metaEl = document.getElementById("pgMeta");
+  let current = "sentinel", timer = null;
+
+  function renderMeta() {
+    const p = PROJECTS[current];
+    metaEl.innerHTML = "";
+    const l1 = document.createElement("div");
+    l1.innerHTML = '<span class="text-teal">' + p.endpoint + "</span>";
+    const l2 = document.createElement("div");
+    l2.className = "break-words";
+    l2.textContent = p.input;
+    metaEl.append(l1, l2);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function clearLog() {
+    stop();
+    logEl.innerHTML = "";
+    const l = document.createElement("div");
+    l.className = "text-sl";
+    l.textContent = "[system] Ready. Press Run.";
+    logEl.appendChild(l);
+  }
+  function renderTabs() {
+    tabsEl.innerHTML = "";
+    Object.keys(PROJECTS).forEach(key => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", String(key === current));
+      b.className = "font-mono text-xs px-3 py-1.5 rounded-sm border " + (key === current ? "border-teal text-teal" : "border-navyll text-sll hover:text-teal");
+      b.textContent = PROJECTS[key].name;
+      b.addEventListener("click", () => { current = key; renderTabs(); renderMeta(); clearLog(); });
+      tabsEl.appendChild(b);
+    });
+  }
+  function run() {
+    stop();
+    logEl.innerHTML = "";
+    const steps = PROJECTS[current].steps;
+    let i = 0, t = 0;
+    const addLine = () => {
+      if (i >= steps.length) { stop(); return; }
+      const [tag, msg] = steps[i++];
+      t += 0.3 + Math.random() * 0.5;
+      const row = document.createElement("div");
+      row.className = "term-line";
+      const color = COLORS[tag] || "#a8b2d1";
+      const time = document.createElement("span");
+      time.className = "text-sl";
+      time.textContent = "+" + t.toFixed(1) + "s ";
+      const tg = document.createElement("span");
+      tg.style.color = color;
+      tg.textContent = "[" + tag + "] ";
+      const tx = document.createElement("span");
+      tx.className = "text-slll";
+      tx.textContent = msg;
+      row.append(time, tg, tx);
+      logEl.appendChild(row);
+      logEl.scrollTop = logEl.scrollHeight;
+    };
+    addLine();
+    timer = setInterval(addLine, 650);
+  }
+  document.getElementById("pgRun").addEventListener("click", run);
+  document.getElementById("pgClear").addEventListener("click", clearLog);
+  document.getElementById("pgCopy").addEventListener("click", e => {
+    const btn = e.currentTarget;
+    const done = t => { btn.textContent = t; setTimeout(() => btn.textContent = "Copy log", 2000); };
+    navigator.clipboard.writeText(logEl.innerText).then(() => done("Copied"), () => done("Copy failed"));
+  });
+  renderTabs(); renderMeta(); clearLog();
+
+  // ---- Scroll reveal ----
+  if (window.ScrollReveal && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    ScrollReveal().reveal(".reveal", { distance: "28px", origin: "bottom", duration: 700, interval: 0, viewFactor: 0.08, cleanup: true });
+  }
+</script>
+</body>
+</html>
